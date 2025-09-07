@@ -618,7 +618,7 @@ const Create = () => {
 
       <ResizeHandle onMouseDown={() => setIsResizing(true)} />
 
-      <MainContent hasIframe={!!iframeUrl} className="bg-card">
+      <MainContent $hasIframe={!!iframeUrl} className="bg-card">
         {isConnected ? (
           <IframeContainer>
             <UrlBarContainer>
@@ -881,13 +881,13 @@ const Sidebar = styled.div`
   gap: 24px;
 `;
 
-const MainContent = styled.div<{ hasIframe: boolean }>`
+const MainContent = styled.div<{ $hasIframe: boolean }>`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: ${({ hasIframe }) => (hasIframe ? "stretch" : "center")};
-  justify-content: ${({ hasIframe }) => (hasIframe ? "stretch" : "center")};
-  gap: ${({ hasIframe }) => (hasIframe ? "0" : "24px")};
+  align-items: ${({ $hasIframe }) => ($hasIframe ? "stretch" : "center")};
+  justify-content: ${({ $hasIframe }) => ($hasIframe ? "stretch" : "center")};
+  gap: ${({ $hasIframe }) => ($hasIframe ? "0" : "24px")};
 `;
 
 const Checklist = styled.div`
